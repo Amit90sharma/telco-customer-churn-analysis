@@ -2,28 +2,44 @@
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow)
-![Scikit--Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Machine%20Learning-orange)
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen)
+
+An end-to-end Data Analytics and Machine Learning project that analyzes customer churn patterns, predicts customer attrition, and presents actionable business insights through an interactive Power BI dashboard.
 
 ---
 
 # 🚀 Project Highlights
 
-- 📈 Analyzed **7,032 telecom customer records** to identify churn patterns.
+- 📈 Analyzed **7,032 telecom customer records** to identify customer churn patterns.
 - 🧹 Performed comprehensive **data cleaning, preprocessing, and feature engineering**.
-- 📊 Conducted detailed **Exploratory Data Analysis (EDA)** to uncover customer behavior.
+- 📊 Conducted detailed **Exploratory Data Analysis (EDA)** to uncover business insights.
 - 🤖 Built and compared **Logistic Regression** and **Random Forest** classification models.
-- 🎯 Achieved **80.38% Accuracy** and **0.845 ROC-AUC** using Logistic Regression.
-- 📉 Developed an **interactive Power BI dashboard** with KPIs, slicers, and business insights.
-- 💡 Generated actionable recommendations to improve customer retention.
+- 🎯 Achieved **80.38% Accuracy** and **0.845 Cross-Validation ROC-AUC** using Logistic Regression.
+- 📉 Designed an **interactive Power BI dashboard** with KPIs, slicers, and retention insights.
+- 💡 Generated actionable business recommendations to improve customer retention.
+
+---
+
+# 📊 Dashboard Preview
+
+## Executive Dashboard
+
+![Executive Dashboard](images/executive_dashboard.png)
+
+---
+
+## Customer Retention Drivers
+
+![Customer Retention Drivers](images/customer_retention_insights.png)
 
 ---
 
 # 📌 Project Overview
 
-Customer churn is one of the biggest challenges faced by subscription-based businesses. Retaining existing customers is significantly more cost-effective than acquiring new ones.
+Customer churn is one of the biggest challenges for subscription-based businesses. Losing existing customers directly impacts revenue and increases customer acquisition costs.
 
-This project analyzes customer behavior using the **IBM Telco Customer Churn Dataset** to identify the major factors influencing customer churn and develops machine learning models capable of predicting customers who are likely to leave.
+This project analyzes customer behavior using the **IBM Telco Customer Churn Dataset**, identifies the key drivers of churn, builds predictive machine learning models, and presents business insights through an interactive Power BI dashboard.
 
 The project combines:
 
@@ -38,26 +54,26 @@ to support data-driven decision making.
 
 # 💼 Business Problem
 
-Telecommunication companies lose significant revenue when customers discontinue their services.
+Telecommunication companies continuously lose customers due to contract cancellations.
 
-The primary objectives of this project are to:
+The objectives of this project are to:
 
 - Understand customer churn behavior.
-- Identify key churn drivers.
-- Build predictive models.
-- Recommend business strategies to improve customer retention.
+- Identify the major churn drivers.
+- Build predictive machine learning models.
+- Compare model performance.
+- Recommend strategies to improve customer retention.
 
 ---
 
 # 🎯 Project Objectives
 
-- Perform data cleaning and preprocessing.
-- Conduct exploratory data analysis.
-- Identify important churn factors.
-- Build predictive machine learning models.
-- Compare multiple classification algorithms.
-- Visualize business insights using Power BI.
-- Recommend strategies to reduce customer churn.
+- Clean and preprocess raw customer data.
+- Perform exploratory data analysis.
+- Engineer features for machine learning.
+- Train and evaluate multiple classification models.
+- Build an interactive Power BI dashboard.
+- Generate actionable business recommendations.
 
 ---
 
@@ -65,47 +81,55 @@ The primary objectives of this project are to:
 
 **Dataset:** IBM Telco Customer Churn Dataset
 
-- Total Records: **7,043**
-- Original Features: **21**
-- Target Variable: **Churn**
-
-After preprocessing:
-
-- Removed **11 incomplete records**
-- Final Dataset: **7,032 customers**
+| Item | Value |
+|------|------|
+| Original Records | 7,043 |
+| Original Features | 21 |
+| Target Variable | Churn |
+| Removed Records | 11 |
+| Final Dataset | 7,032 Customers |
 
 ---
 
 # 📁 Project Structure
 
 ```text
-Telco-Customer-Churn/
+telco-customer-churn-analysis/
 │
 ├── data/
 │   ├── raw/
+│   │   └── telcochurn.csv
+│   │
 │   └── processed/
-│
-├── models/
+│       ├── telco_churn_clean.csv
+│       └── telco_churn_ml.csv
 │
 ├── notebooks/
 │   ├── 01_EDA.ipynb
 │   └── 02_Machine_Learning.ipynb
 │
-├── dashboard/
-│   └── Telco_Churn.pbix
+├── models/
+│   ├── logistic_regression.pkl
+│   └── scaler.pkl
+│
+├── powerbi/
+│   └── Telco_Customer_Churn_Analysis.pbix
 │
 ├── images/
+│   ├── executive_dashboard.png
+│   └── customer_retention_insights.png
 │
 ├── reports/
+│   └── model_comparison.csv
 │
 ├── README.md
-│
-└── requirements.txt
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
 
-# 🛠 Tools & Technologies
+# 🛠️ Tools & Technologies
 
 ### Programming
 
@@ -126,6 +150,7 @@ Telco-Customer-Churn/
 ### Development Environment
 
 - Jupyter Notebook
+- VS Code
 
 ---
 
@@ -182,18 +207,18 @@ The following analyses were performed:
 
 # 🤖 Machine Learning Models
 
-The following classification models were developed:
+Models developed:
 
 - Logistic Regression
 - Random Forest Classifier
 
-Model evaluation metrics:
+Evaluation Metrics:
 
 - Accuracy
 - Precision
 - Recall
 - F1 Score
-- ROC-AUC Score
+- ROC-AUC
 - Confusion Matrix
 - ROC Curve
 - Cross Validation
@@ -204,69 +229,65 @@ Model evaluation metrics:
 
 | Model | Accuracy | Precision | Recall | F1 Score | ROC-AUC |
 |-------|---------:|----------:|--------:|---------:|--------:|
-| Logistic Regression | 80.38% | 64.76% | 57.49% | 60.91% | 0.836 |
+| Logistic Regression | **80.38%** | **64.76%** | **57.49%** | **60.91%** | **0.836** |
 | Random Forest | 78.54% | 61.92% | 50.00% | 55.33% | 0.815 |
 
-## 🏆 Best Performing Model
+## 🏆 Best Model
 
 **Logistic Regression**
 
-Average Cross Validation ROC-AUC
+Average Cross Validation ROC-AUC:
 
 **0.845**
 
 ---
 
-# 🔍 Important Churn Drivers
+# 🔍 Key Churn Drivers
 
-The machine learning models identified the following features as major contributors to customer churn:
+The following factors showed the strongest relationship with customer churn:
 
 - Contract Type
 - Customer Tenure
 - Monthly Charges
 - Internet Service
+- Payment Method
 - Tech Support
 - Online Security
-- Payment Method
 
 ---
 
 # 📊 Power BI Dashboard
 
-The interactive dashboard includes:
+The dashboard provides:
 
 - Executive KPI Cards
-- Customer Churn Overview
+- Overall Churn Overview
 - Contract Type Analysis
 - Internet Service Analysis
 - Customer Retention Drivers
-- Interactive Filters (Slicers)
-- Business Recommendations
-
-### Dashboard Preview
-
-> *(Dashboard screenshots will be added after final formatting.)*
+- Interactive Slicers
+- Business Insights
 
 ---
 
 # 📌 Key Business Insights
 
-- Customers with Month-to-Month contracts have the highest churn rate.
-- Churn is highest during the first year of service.
-- Fiber Optic customers experience significantly higher churn than DSL customers.
-- Customers paying via Electronic Check are more likely to churn.
-- Lack of Tech Support and Online Security is strongly associated with higher churn.
-- Customers with longer tenure are significantly less likely to churn.
+- Month-to-Month contracts have the highest churn rate.
+- Churn is highest during the first year of customer tenure.
+- Fiber Optic customers churn more frequently than DSL customers.
+- Electronic Check users have the highest churn rate.
+- Customers without Tech Support or Online Security are significantly more likely to churn.
+- Longer customer tenure greatly reduces churn probability.
 
 ---
 
 # 💡 Business Recommendations
 
-- Encourage customers to migrate to One-Year or Two-Year contracts.
-- Improve onboarding and engagement during the first 12 months.
+- Encourage customers to migrate to long-term contracts.
+- Improve onboarding during the first 12 months.
 - Promote Tech Support and Online Security plans.
 - Review Fiber Optic pricing and service quality.
-- Encourage automatic payment methods through discounts or incentives.
+- Encourage automatic payment methods through incentives.
 
 ---
 
@@ -276,9 +297,8 @@ The interactive dashboard includes:
 - Machine Learning Dataset
 - Trained Logistic Regression Model
 - Feature Scaler
-- Model Comparison Report
 - Power BI Dashboard
-- Business Insights
+- Business Insights Report
 - Business Recommendations
 
 ---
@@ -288,7 +308,13 @@ The interactive dashboard includes:
 Clone the repository:
 
 ```bash
-git clone https://github.com/yourusername/Telco-Customer-Churn.git
+git clone https://github.com/Amit90sharma/telco-customer-churn-analysis.git
+```
+
+Navigate to the project:
+
+```bash
+cd telco-customer-churn-analysis
 ```
 
 Install dependencies:
@@ -297,11 +323,18 @@ Install dependencies:
 pip install -r requirements.txt
 ```
 
-Run:
+Run the notebooks in order:
 
-1. **01_EDA.ipynb**
-2. **02_Machine_Learning.ipynb**
-3. Open the **Power BI Dashboard (.pbix)**
+1. `01_EDA.ipynb`
+2. `02_Machine_Learning.ipynb`
+
+Finally, open:
+
+```
+powerbi/Telco_Customer_Churn_Analysis.pbix
+```
+
+using Power BI Desktop.
 
 ---
 
@@ -315,10 +348,11 @@ Available through IBM Sample Datasets and Kaggle.
 
 # 🚀 Future Improvements
 
-- Deploy the model using Streamlit
-- Develop a real-time churn prediction API
-- Automate model retraining
-- Integrate live business dashboards
+- Hyperparameter tuning
+- XGBoost implementation
+- SHAP Explainability
+- Streamlit Deployment
+- Real-time Prediction API
 
 ---
 
@@ -339,4 +373,4 @@ Aspiring Data Analyst
 
 ---
 
-## ⭐ If you found this project helpful, consider giving it a star.
+## ⭐ If you found this project helpful, consider giving it a star!
