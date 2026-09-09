@@ -25,13 +25,13 @@ An end-to-end Data Analytics and Machine Learning project that analyzes customer
 
 ## Executive Dashboard
 
-![Executive Dashboard](images/executive_dashboard.png)
+![Executive Dashboard](images/Telco_customer_churn_dashboard.png)
 
 ---
 
 ## Customer Retention Drivers
 
-![Customer Retention Drivers](images/customer_retention_insights.png)
+![Customer Retention Drivers](images/Customer_retention_risk.png)
 
 ---
 
