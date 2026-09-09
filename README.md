@@ -23,13 +23,13 @@ An end-to-end Data Analytics and Machine Learning project that analyzes customer
 
 # 📊 Dashboard Preview
 
-## Executive Dashboard
+## Customer Churn
 
 ![Executive Dashboard](images/telco_customer_churn_dashboard.png)
 
 ---
 
-## Customer Retention Drivers
+## Customer Retention Risk
 
 ![Customer Retention Drivers](images/customer_retention_risk.png)
 
